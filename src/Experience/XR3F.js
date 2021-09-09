@@ -24,7 +24,7 @@ const XR3F = ({name, updateCtx,}) => {
       THREE,
   } = window;
 
-  useEffect(() => {
+  useEffect(() => { 
     XR8.addCameraPipelineModule({
       name: 'xrthree',
       onStart,
@@ -44,7 +44,7 @@ const XR3F = ({name, updateCtx,}) => {
   }
 
   const onStart = ({ canvasWidth, canvasHeight }) => {
-    
+ 
     gl.autoClear = false;
     gl.setSize(canvasWidth, canvasHeight);
     gl.antialias = true;

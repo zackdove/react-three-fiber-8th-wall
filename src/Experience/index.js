@@ -19,7 +19,8 @@ const Component = ({ XR8, xr8Config, onComplete, backgroundImage, }) => {
         updateCtx,
     } = useContext();
 
-    useEffect(() => {
+    useEffect(() => { 
+
         if (XR8) {
             updateCtx({ XR8 });
         }
