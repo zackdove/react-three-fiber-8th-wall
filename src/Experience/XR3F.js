@@ -1,6 +1,7 @@
 //import * as THREE from 'three';
 import React, { useEffect, useState, useRef } from 'react';
-import { Canvas, useThree, useFrame  } from 'react-three-fiber';
+import { useThree, useFrame  } from '@react-three/fiber';
+ 
 
 const XR3F = ({name, updateCtx,}) => {
   const { scene, gl, camera } = useThree();

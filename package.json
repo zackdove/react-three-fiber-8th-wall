@@ -7,10 +7,11 @@
   "dependencies": {
     "@react-three/drei": "^7.7.0",
     "@react-three/fiber": "^7.0.6",
+    "@zappar/zapworks-cli": "^0.7.5",
     "prop-types": "^15.7.2",
     "react-scripts": "^2.0.3",
     "react-three-fiber": "5.0.1",
-    "three": "^0.122.0"
+    "three": "^0.132.2"
   },
   "devDependencies": {
     "@emotion/core": "^10.0.27",
@@ -25,7 +26,8 @@
     "react-dom": "^16.13.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "serve": "cd build && zapworks serve --lan",
+    "start": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
