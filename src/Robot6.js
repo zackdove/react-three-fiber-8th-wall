@@ -6,10 +6,9 @@ export default function Model(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/robot6.glb')
   const { actions } = useAnimations(animations, group)
-  // const myytexture = useTexture('./r3flaguna.png')   
-  useEffect(() => { 
-    actions.idle.play();  
-    // materials['Material.004'].map = {myytexture}
+  // 
+  useEffect(() => {  
+    actions.idle.play();   
   });
 
   return (
