@@ -101,7 +101,7 @@ const XR3F = ({name, updateCtx,}) => {
       </mesh>   
       <mesh castShadow position={tapTarget} visible={!!tapTarget} ref={$box} userData={{ hello: 'yop' }} >
           <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="hotpink"  />
+          <meshStandardMaterial color="green"  />
       </mesh> 
     </group>
   );
