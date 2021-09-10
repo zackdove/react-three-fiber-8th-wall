@@ -5,10 +5,11 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
-    "react-scripts": "2.0.3",
+    "@react-three/drei": "^7.7.0",
     "prop-types": "^15.7.2",
-    "three": "^0.122.0",
-    "react-three-fiber": "5.0.1"
+    "react-scripts": "2.0.3",
+    "react-three-fiber": "5.0.1",
+    "three": "^0.122.0"
   },
   "devDependencies": {
     "@emotion/core": "^10.0.27",
