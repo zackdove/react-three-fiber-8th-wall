@@ -1,7 +1,7 @@
 //import * as THREE from 'three';
 import React, { useEffect, useState, useRef } from 'react';
 import { useThree, useFrame  } from '@react-three/fiber';
- 
+import Robot from "../Robot6";
 
 const XR3F = ({name, updateCtx,}) => {
   const { scene, gl, camera } = useThree();
@@ -100,10 +100,15 @@ const XR3F = ({name, updateCtx,}) => {
           opacity={0.3}
         />
       </mesh>  
+
+
       <group position={[0, .5, 0]}>
         <mesh castShadow position={tapTarget} visible={!!tapTarget} ref={$box} userData={{ hello: 'yop' }} >
             <boxGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color="red"  />
+            <group position={[0, 0, 0]}>
+              <Robot/>
+            </group>
         </mesh> 
       </group>
     </group> 
