@@ -1,7 +1,7 @@
 //import * as THREE from 'three';
 import React, { useEffect, useState, useRef } from 'react';
 import { useThree, useFrame  } from '@react-three/fiber';
-import Robot from "../Robot6";
+import SceneParts from "./sceneParts";
 
 const XR3F = ({name, updateCtx,}) => {
   const { scene, gl, camera } = useThree();
@@ -107,7 +107,7 @@ const XR3F = ({name, updateCtx,}) => {
             <boxGeometry args={[1, 1, 1]} />
             <meshStandardMaterial color="red"  />
             <group position={[0, 0, 0]}>
-              <Robot/>
+              {/* <SceneParts/> */}
             </group>
         </mesh> 
       </group>
