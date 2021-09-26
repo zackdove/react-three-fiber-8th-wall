@@ -2,7 +2,7 @@ import { shape, func, string } from "prop-types";
 import styled from "@emotion/styled";
 
 import React, { useEffect } from "react";
-import { Canvas, useThree } from "react-three-fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import MainScreenOverlays from "../divOverlayParts"; 
 import { withLauncher } from "../Component";
 import { withContext } from "./ContextProvider";
@@ -32,7 +32,7 @@ const Component = ({ XR8, xr8Config, onComplete, backgroundImage }) => {
           top: "0px",
           zIndex: 100,
         }}
-        shadowMap
+        shadows
         updateDefaultCamera={false}
         camera={{ position: [0, 0, 5], fov: 60 }}
       >

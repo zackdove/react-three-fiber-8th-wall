@@ -1,6 +1,6 @@
 //import * as THREE from 'three';
 import React, { useEffect, useState, useRef } from "react";
-import { Canvas, useThree, useFrame } from "react-three-fiber";
+import { Canvas, useThree, useFrame } from "@react-three/fiber";
 
 const XR3F = ({ name, updateCtx }) => {
   const { scene, gl, camera } = useThree();
@@ -101,7 +101,7 @@ const XR3F = ({ name, updateCtx }) => {
           userData={{ hello: "yop" }}
         >
           <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="blue" />
+          <meshStandardMaterial color="green" />
         </mesh>
       </group>
     </group>

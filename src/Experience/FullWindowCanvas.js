@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import React, { useEffect, useState, useRef } from 'react';
-import { useThree } from 'react-three-fiber';
+import { useThree } from '@react-three/fiber';
 
 const FullWindowCanvas = () => {
 	const {gl} = useThree();
