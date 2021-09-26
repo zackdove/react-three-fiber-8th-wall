@@ -1,6 +1,7 @@
 //import * as THREE from 'three';
 import React, { useEffect, useState, useRef } from "react";
-import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import { useThree, useFrame } from "@react-three/fiber";
+import SceneParts from "../sceneParts";
 
 const XR3F = ({ name, updateCtx }) => {
   const { scene, gl, camera } = useThree();
@@ -71,7 +72,21 @@ const XR3F = ({ name, updateCtx }) => {
       elements[i] = intrinsics[i];
     }
 
-    camera.projectionMatrixInverse.getInverse(camera.projectionMatrix);
+    //  _getCameraPosition() {
+    //   if (!this.viewProjectionMatrix) {
+    //    return new THREE.Vector3();
+    //   }
+
+    //   const cam = new THREE.Camera();
+    //   const rootInverse = new THREE.Matrix4().getInverse(this.rootTransform);
+    //   cam.projectionMatrix.elements = this.viewProjectionMatrix;
+    //   cam.projectionMatrixInverse = new THREE.Matrix4().getInverse(cam.projectionMatrix); // add since three@0.103.0
+    //   const campos = new THREE.Vector3(0, 0, 0).unproject(cam).applyMatrix4(rootInverse);
+    //   return campos;
+    //  }
+
+    camera.projectionMatrixInverse.copy(camera.projectionMatrix).invert();
+    //camera.projectionMatrixInverse.getInverse(camera.projectionMatrix);
     camera.setRotationFromQuaternion(rotation);
     camera.position.copy(position);
   };
@@ -92,7 +107,7 @@ const XR3F = ({ name, updateCtx }) => {
         <planeGeometry attach="geometry" args={[100, 100, 1, 1]} />
         <shadowMaterial opacity={0.3} />
       </mesh>
-      <group position={[0,.5,0]}>
+      <group position={[0, 0.5, 0]}>
         <mesh
           castShadow
           position={tapTarget}
@@ -101,7 +116,12 @@ const XR3F = ({ name, updateCtx }) => {
           userData={{ hello: "yop" }}
         >
           <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="green" />
+          <meshStandardMaterial color="purple" />
+        </mesh>
+      </group>
+      <group position={[0, 0, 0]}>
+        <mesh castShadow position={tapTarget} visible={!!tapTarget} ref={$box}>
+          <SceneParts />
         </mesh>
       </group>
     </group>
