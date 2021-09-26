@@ -48,7 +48,7 @@ const Component = ({ XR8, xr8Config, onComplete, backgroundImage }) => {
         />
         <XR3F name={"xr-three"} updateCtx={updateCtx}></XR3F>
         <FullWindowCanvas />
-      </Canvas>{" "}
+      </Canvas>
     </group>
   );
 };
