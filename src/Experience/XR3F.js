@@ -1,7 +1,7 @@
-//import * as THREE from 'three';
+import * as THREE from 'three';
 import React, { useEffect, useState, useRef } from 'react';
 import { useThree, useFrame  } from '@react-three/fiber';
-import SceneParts from "./sceneParts";
+
 
 const XR3F = ({name, updateCtx,}) => {
   const { scene, gl, camera } = useThree();
@@ -91,7 +91,7 @@ const XR3F = ({name, updateCtx,}) => {
 
   return (
     <group>
-      <mesh onPointerDown={(e) => setTapTarget(e.intersections[0].point)} receiveShadow position={[0, 0, 0]} ref={$surface} rotation-x={-Math.PI / 2}>
+      <mesh  receiveShadow position={[0, 0, 0]} ref={$surface} rotation-x={-Math.PI / 2}>
         <planeGeometry 
           attach='geometry'
           args={[100, 100, 1, 1]}
@@ -101,16 +101,11 @@ const XR3F = ({name, updateCtx,}) => {
         />
       </mesh>  
 
-
-      <group position={[0, .5, 0]}>
-        <mesh castShadow position={tapTarget} visible={!!tapTarget} ref={$box} userData={{ hello: 'yop' }} >
-            <boxGeometry args={[1, 1, 1]} />
+        <mesh castShadow position={[0, 2, -4]}  ref={$box}  >
+            <boxGeometry args={[1, 1, 1]} position/>
             <meshStandardMaterial color="red"  />
-            <group position={[0, 0, 0]}>
-              {/* <SceneParts/> */}
-            </group>
         </mesh> 
-      </group>
+
     </group> 
   );
 }
