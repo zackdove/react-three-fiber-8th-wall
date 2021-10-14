@@ -9,7 +9,7 @@ This project aim to integrate [react-three-fiber](https://github.com/pmndrs/reac
 
 This version is cleaned up and is working on iOS 14 as of Oct '21.
 
-Add your react-three-fiber code to `XR3F.js`.
+Add your react-three-fiber code to `src/XR3F.js`.
 
 ###  To Get up and running locally
 
